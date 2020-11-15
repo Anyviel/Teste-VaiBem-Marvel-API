@@ -1,5 +1,7 @@
 import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, makeStyles, Typography } from '@material-ui/core';
 import React from 'react';
+import { useHistory } from 'react-router-dom';
+
 import './style.css';
 
 const useStyles = makeStyles({
@@ -15,6 +17,12 @@ const useStyles = makeStyles({
 const CardItem = ({ values }) => {
     const classes = useStyles();
 
+    let history = useHistory();
+
+    function handleClick() {
+        history.push(`/char-info/${values.id}`);
+    }
+
     return (
         <Grid item xs={12} sm={6} md={4} lg={4} xl={4} >
 
@@ -24,6 +32,7 @@ const CardItem = ({ values }) => {
                         className={classes.media}
                         image={`${values?.thumbnail?.path}.${values?.thumbnail?.extension}`}
                         title={values?.name}
+                        onClick={handleClick}
                     />
                     <CardContent>
                         <Typography gutterBottom variant="h5" component="h2">
@@ -35,7 +44,7 @@ const CardItem = ({ values }) => {
                     </CardContent>
                 </CardActionArea>
                 <CardActions>
-                    <Button size="small" color="secondary" className="btn-red">
+                    <Button size="small" color="secondary" className="btn-red" onClick={handleClick}>
                         Saiba mais
                     </Button>
                 </CardActions>

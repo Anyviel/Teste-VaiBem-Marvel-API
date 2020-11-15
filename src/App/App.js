@@ -1,5 +1,7 @@
-import { Container, makeStyles } from '@material-ui/core';
 import React from 'react';
+import Routes from '../Router';
+
+import { Container, makeStyles } from '@material-ui/core';
 import Home from '../pages/home';
 
 const appStyles = makeStyles({
@@ -14,7 +16,7 @@ function App() {
   return (
     <div className="App">
       <Container maxWidth="md" className={classes.container}>
-        <Home />
+        <Routes />
       </Container>
     </div>
   );

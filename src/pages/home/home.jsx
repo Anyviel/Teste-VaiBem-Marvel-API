@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import marvelApi from '../../api/marvelApi';
 
 import InfiniteScroll from 'react-infinite-scroll-component';
+import useDebouncedEffect  from 'use-debounced-effect';
 
 import CardList from '../../components/comicList';
 import Search from '../../components/search/search';
@@ -12,15 +13,15 @@ const Home = () => {
     const [loading, setLoading] = useState(false);
     const [page, setPage] = useState(0);
     const [comics, setComics] = useState([]);
+    const [search, setSearch] = useState('');
 
 
-    const getComics = async (page, query) => {
+    const getComics = async () => {
         setLoading(true);
         try {
-            const data = await marvelApi.getComics(page * 20, query);
+            const data = await marvelApi.getComics(page * 20, search);
 
             console.log(data)
-
             setComics([...comics, ...data]);
             setLoading(false);
         } catch (err) {
@@ -29,16 +30,19 @@ const Home = () => {
         setLoading(false);
     }
 
-    const handleSearch = (query) => {
-
+    const handleSearch = (e) => {
+        setSearch(e.target.value);
+        setComics([]);
+        setPage(0);
     }
 
     const onLoad = () => {
-        getComics(page);
+        getComics();
     }
 
     useEffect(onLoad, [page]);
 
+    useDebouncedEffect(onLoad, 500, [search]);
 
     return (
         <>

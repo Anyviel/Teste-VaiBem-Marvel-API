@@ -35,6 +35,7 @@ const Search = ({ onSearch }) => {
                 className={classes.input}
                 placeholder="Search comics"
                 inputProps={{ 'aria-label': 'search comics' }}
+                onChange={onSearch}
             />
             <Divider className={classes.divider} orientation="vertical" />
             <IconButton type="submit" className={classes.iconButton} aria-label="search">
