@@ -6,7 +6,7 @@ import './style.css';
 
 const useStyles = makeStyles({
     root: {
-        maxWidth: 345,
+        maxWidth: 340,
     },
     media: {
         height: 260,
@@ -24,7 +24,7 @@ const CardItem = ({ values }) => {
     }
 
     return (
-        <Grid item xs={12} sm={6} md={4} lg={4} xl={4} >
+        <Grid item xs={12} sm={6} md={4} lg={3} xl={3} >
 
             <Card className={classes.root}>
                 <CardActionArea>
@@ -38,9 +38,9 @@ const CardItem = ({ values }) => {
                         <Typography gutterBottom variant="h5" component="h2">
                             {values?.name}
                         </Typography>
-                        <Typography variant="body2" color="textSecondary" component="p">
+                        {/* <Typography variant="body2" color="textSecondary" component="p">
                             {values?.description}
-                        </Typography>
+                        </Typography> */}
                     </CardContent>
                 </CardActionArea>
                 <CardActions>

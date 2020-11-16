@@ -1,6 +1,6 @@
 import React from "react";
 import Home from './pages/home';
-import CharInfo from './pages/charInfo';
+import Character from './pages/character';
 
 import {
   BrowserRouter as Router,
@@ -14,7 +14,7 @@ export default function Routes() {
       <div>
         <Switch>
           <Route path="/char-info/:id">
-            <CharInfo />
+            <Character />
           </Route>
           <Route path="/">
             <Home />

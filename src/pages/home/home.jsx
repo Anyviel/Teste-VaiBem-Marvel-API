@@ -6,23 +6,27 @@ import useDebouncedEffect  from 'use-debounced-effect';
 
 import CardList from '../../components/comicList';
 import Search from '../../components/search/search';
+
+import { Container } from '@material-ui/core';
 import './style.css'
+import NavBar from '../../components/navBar';
 
 const Home = () => {
 
     const [loading, setLoading] = useState(false);
     const [page, setPage] = useState(0);
-    const [comics, setComics] = useState([]);
+    const [characters, setCharacters] = useState([]);
     const [search, setSearch] = useState('');
 
+    const pageSize = 20;
 
-    const getComics = async () => {
+    const getCharacters = async () => {
         setLoading(true);
         try {
-            const data = await marvelApi.getComics(page * 20, search);
+            const data = await marvelApi.getCharacters(page * pageSize, search);
 
             console.log(data)
-            setComics([...comics, ...data]);
+            setCharacters([...characters, ...data]);
             setLoading(false);
         } catch (err) {
             console.error(err);
@@ -32,12 +36,12 @@ const Home = () => {
 
     const handleSearch = (e) => {
         setSearch(e.target.value);
-        setComics([]);
+        setCharacters([]);
         setPage(0);
     }
 
     const onLoad = () => {
-        getComics();
+        getCharacters();
     }
 
     useEffect(onLoad, [page]);
@@ -46,17 +50,21 @@ const Home = () => {
 
     return (
         <>
-            <Search onSearch={handleSearch} />
-            <InfiniteScroll 
-            dataLength={comics.length}
-            next={() => {
-                setPage(page + 1)
-            }}
-            hasMore={true}
-            loader={<h4>Carregando...</h4>}
-            >
-                <CardList items={comics} />
-            </InfiniteScroll>
+            <NavBar onSearch={handleSearch} showSearch />
+            <Container maxWidth="lg">
+                {/* <Search onSearch={handleSearch} /> */}
+                <InfiniteScroll 
+                dataLength={Math.ceil(characters.length / pageSize)}
+                next={() => {
+                    setPage(page + 1)
+                }}
+                hasMore={true}
+                loader={<h4>Carregando...</h4>}
+                endMessage={<p> </p>}
+                >
+                    <CardList items={characters} />
+                </InfiniteScroll>
+            </Container>
         </>
     )
 }

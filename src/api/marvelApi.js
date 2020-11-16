@@ -17,7 +17,7 @@ const getCredentials = () => {
 }
 
 const marvelApi = {
-    getComics: async (page = 0, name = '') => {
+    getCharacters: async (page = 0, name = '') => {
         let search = '';
 
         if (name !== ''){

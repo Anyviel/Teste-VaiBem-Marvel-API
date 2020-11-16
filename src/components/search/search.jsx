@@ -10,6 +10,7 @@ const useStyles = makeStyles((theme) => ({
     root: {
         padding: '2px 4px',
         display: 'flex',
+        justifyContent: 'center',
         alignItems: 'center',
         width: 400,
     },
@@ -33,12 +34,12 @@ const Search = ({ onSearch }) => {
         <Paper component="form" className={classes.root}>
             <InputBase
                 className={classes.input}
-                placeholder="Search comics"
-                inputProps={{ 'aria-label': 'search comics' }}
+                placeholder="Buscar Personagens"
+                inputProps={{ 'aria-label': 'Buscar Personagens' }}
                 onChange={onSearch}
             />
             <Divider className={classes.divider} orientation="vertical" />
-            <IconButton type="submit" className={classes.iconButton} aria-label="search">
+            <IconButton className={classes.iconButton} aria-label="search">
                 <SearchIcon />
             </IconButton>
         </Paper>
