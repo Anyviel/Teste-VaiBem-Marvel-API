@@ -60,7 +60,7 @@ const Home = () => {
                 }}
                 hasMore={true}
                 loader={<h4>Carregando...</h4>}
-                endMessage={<p> </p>}
+                endMessage={<p></p>}
                 >
                     <CardList items={characters} />
                 </InfiniteScroll>
