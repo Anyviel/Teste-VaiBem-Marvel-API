@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/Teste-VaiBem-Marvel-API/static/css/main.8108e7d0.chunk.css",
+    "main.js": "/Teste-VaiBem-Marvel-API/static/js/main.965a4321.chunk.js",
+    "main.js.map": "/Teste-VaiBem-Marvel-API/static/js/main.965a4321.chunk.js.map",
+    "runtime-main.js": "/Teste-VaiBem-Marvel-API/static/js/runtime-main.0b3b4e2c.js",
+    "runtime-main.js.map": "/Teste-VaiBem-Marvel-API/static/js/runtime-main.0b3b4e2c.js.map",
+    "static/css/2.cd6c77aa.chunk.css": "/Teste-VaiBem-Marvel-API/static/css/2.cd6c77aa.chunk.css",
+    "static/js/2.b05fa913.chunk.js": "/Teste-VaiBem-Marvel-API/static/js/2.b05fa913.chunk.js",
+    "static/js/2.b05fa913.chunk.js.map": "/Teste-VaiBem-Marvel-API/static/js/2.b05fa913.chunk.js.map",
+    "index.html": "/Teste-VaiBem-Marvel-API/index.html",
+    "static/css/2.cd6c77aa.chunk.css.map": "/Teste-VaiBem-Marvel-API/static/css/2.cd6c77aa.chunk.css.map",
+    "static/css/main.8108e7d0.chunk.css.map": "/Teste-VaiBem-Marvel-API/static/css/main.8108e7d0.chunk.css.map",
+    "static/js/2.b05fa913.chunk.js.LICENSE.txt": "/Teste-VaiBem-Marvel-API/static/js/2.b05fa913.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/Teste-VaiBem-Marvel-API/static/media/roboto-vietnamese-400-normal.52cebac0.woff2"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0b3b4e2c.js",
+    "static/css/2.cd6c77aa.chunk.css",
+    "static/js/2.b05fa913.chunk.js",
+    "static/css/main.8108e7d0.chunk.css",
+    "static/js/main.965a4321.chunk.js"
+  ]
+}
