@@ -22,6 +22,9 @@ Instalando as dependências necesárias para iniciar o projeto:
   $yarn install
   ```
 
+  Além disso, a aplicação requer que seja criada um arquivo .env, na qual receberá os valores que a Marvel API gera para cada usuário.
+  Você pode utilizar o arquivo *.env.example* como exemplo e adicionar os valores necessários.
+
 ## Design
 
 A aplicação possui um Design simples e eficiente utilizando o **Material Design**, procurando obter agilidade no desenvolvimento da aplicação.
