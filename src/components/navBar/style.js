@@ -10,14 +10,14 @@ export const useStyles = makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
-  },
-  navBg: {
-    background: '#ED1D24',
-  },
-  title: {
     fontSize: 36,
     fontWeight: 500,
     fontFamily: ['Roboto'],
+    color: '#fff',
+    textDecoration: 'none',
+  },
+  navBg: {
+    background: '#ED1D24',
   },
   space: {
     display: 'flex',

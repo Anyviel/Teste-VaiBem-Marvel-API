@@ -13,7 +13,6 @@ function Character() {
   const classes = useStyles();
 
   const [character, setCharacter] = useState([]);
-  // const [comic, setComic] = useState([]);
 
   const getChar = async () => { // Uma Função Assíncrona para acessar os personagens da API de forma individual
     try {

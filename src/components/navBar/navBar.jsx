@@ -5,6 +5,7 @@ import IconButton from '@material-ui/core/IconButton';
 import {useStyles} from './style';
 import Search from '../search/search';
 import { Container } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 export default function NavBar({ onSearch, showSearch }) {
 
@@ -16,7 +17,7 @@ export default function NavBar({ onSearch, showSearch }) {
         <Container maxWidth="lg">
           <Toolbar className={classes.space}>
             <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-              <h1 className={classes.title}>Marvel Searcher</h1>
+              <Link to='/' className={classes.title}>Marvel Searcher</Link >
             </IconButton>
             {showSearch && <Search onSearch={onSearch} />}
           </Toolbar>
