@@ -6,17 +6,17 @@ import {
   BrowserRouter as Router,
   Switch,
   Route
-} from "react-router-dom";
+} from "react-router-dom"; // Biblioteca para gerenciar o 'caminho' entre as páginas
 
 export default function Routes() {
   return (
     <Router>
       <div>
         <Switch>
-          <Route path="/char-info/:id">
+          <Route path="/char-info/:id"> {/* Página para informações dos personagens */}
             <Character />
           </Route>
-          <Route path="/">
+          <Route path="/"> {/* É a Página inicial do Projeto */}
             <Home />
           </Route>
         </Switch>

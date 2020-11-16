@@ -8,27 +8,26 @@ import { useStyles } from './style';
 
 function Character() {
 
-  const { id } = useParams();
+  const { id } = useParams(); //Função do React-Router-Dom para garantir a identificação de cada personagem
 
   const classes = useStyles();
 
   const [character, setCharacter] = useState([]);
   // const [comic, setComic] = useState([]);
 
-  const getChar = async () => {
+  const getChar = async () => { // Uma Função Assíncrona para acessar os personagens da API de forma individual
     try {
       const data = await marvelApi.getCharacter(id);
-
-      console.log(data);
+      // console.log(data);
 
       setCharacter(data);
     } 
     catch (err) {
-      console.error(err);
+      console.error(err); //Em caso de algum erro durante o carregamento das informações da API
     }
   }
 
-  const onLoad = () => {
+  const onLoad = () => { //Inicia a Função no momento que os dados são carregados.
     getChar();
   }
 

@@ -14,7 +14,7 @@ const CardList = ({ items }) => {
 
     return (
         <Grid className={classes.container} container spacing={3}>
-            {items?.map(comic =>
+            {items?.map(comic => // Mapeia e imprime cada personagem presente na API (Num total de 20 por requisição)
             <CardItem values={comic} key={comic.id} />
             )}
         </Grid>

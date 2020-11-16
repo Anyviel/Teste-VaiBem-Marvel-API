@@ -19,8 +19,8 @@ const CardItem = ({ values }) => {
 
     let history = useHistory();
 
-    function handleClick() {
-        history.push(`/char-info/${values.id}`);
+    function handleClick() { // Captura o ID do personagem selecionado dentro da Home e manda para a '/char-info'
+        history.push(`/char-info/${values.id}`); 
     }
 
     return (
@@ -38,9 +38,6 @@ const CardItem = ({ values }) => {
                         <Typography gutterBottom variant="h5" component="h2">
                             {values?.name}
                         </Typography>
-                        {/* <Typography variant="body2" color="textSecondary" component="p">
-                            {values?.description}
-                        </Typography> */}
                     </CardContent>
                 </CardActionArea>
                 <CardActions>

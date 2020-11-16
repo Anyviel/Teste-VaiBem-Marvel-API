@@ -1,17 +1,16 @@
 import dotenv from 'dotenv';
 import md5 from 'md5';
 
+dotenv.config(); // Permite a utilização das ENVS para armazenar dados sigilosos
 
-dotenv.config();
-
-const path = 'http://gateway.marvel.com/v1/public';
+const path = 'http://gateway.marvel.com/v1/public'; 
 
 const getCredentials = () => {
-    const publicKey = process.env.REACT_APP_MARVEL_KEY_PUBLIC;
-    const privateKey = process.env.REACT_APP_MARVEL_KEY_PRIVATE;
+    const publicKey = process.env.REACT_APP_MARVEL_KEY_PUBLIC; //Chamada a Chave Publica necessária para acessar a API da Marvel
+    const privateKey = process.env.REACT_APP_MARVEL_KEY_PRIVATE; //Chamada a Chave Privada necessária para acessar a API da Marvel
 
-    const ts = Date.now();
-    const hash = md5(`${ts}${privateKey}${publicKey}`);
+    const ts = Date.now(); //Gera o Timestamp necessário para gerar a Hash
+    const hash = md5(`${ts}${privateKey}${publicKey}`); //Gera a Hash utilizando o MD5
 
     return `apikey=${publicKey}&ts=${ts}&hash=${hash}`;
 }

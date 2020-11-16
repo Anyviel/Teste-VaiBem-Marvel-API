@@ -20,12 +20,12 @@ const Home = () => {
 
     const pageSize = 20;
 
-    const getCharacters = async () => {
+    const getCharacters = async () => { // Uma Função Assíncrona para acessar os personagens da API em forma de Lista
         setLoading(true);
         try {
-            const data = await marvelApi.getCharacters(page * pageSize, search);
+            const data = await marvelApi.getCharacters(page * pageSize, search); 
 
-            console.log(data)
+            // console.log(data)
             setCharacters([...characters, ...data]);
             setLoading(false);
         } catch (err) {
@@ -34,10 +34,10 @@ const Home = () => {
         setLoading(false);
     }
 
-    const handleSearch = (e) => {
+    const handleSearch = (e) => { // Função que permite buscar os personagens da API através do Nome
         setSearch(e.target.value);
-        setCharacters([]);
-        setPage(0);
+        setCharacters([]); // Limpa a Lista inicial e se atualiza com os valores da busca
+        setPage(0); //Após a busca ser limpa, retorna a lista no valor incial
     }
 
     const onLoad = () => {
@@ -46,7 +46,7 @@ const Home = () => {
 
     useEffect(onLoad, [page]);
 
-    useDebouncedEffect(onLoad, 500, [search]);
+    useDebouncedEffect(onLoad, 500, [search]); // O Debounced é utilizado para que a função 'handleSearch' seja executada após o usuário ter terminado sua digitação
 
     return (
         <>
