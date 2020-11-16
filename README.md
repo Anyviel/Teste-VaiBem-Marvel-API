@@ -9,7 +9,7 @@ Essa aplicação permite a busca de diversos **personagems** da Marvel.
 
 ## Como Iniciar o Projeto
 
-Essa Aplicação requer que o [Node.js](https://nodejs.org/) esteja na Versão 4 ou superior.
+É recomendado que, ao utilizar essa Aplicação, o [Node.js](https://nodejs.org/) esteja na sua Versão LTS (14.15.1) ou uma Versão superior.
 
 Instalando as dependências necesárias para iniciar o projeto:
   ```sh
