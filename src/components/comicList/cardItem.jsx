@@ -1,18 +1,8 @@
-import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, makeStyles, Typography } from '@material-ui/core';
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 
-import './style.css';
-
-const useStyles = makeStyles({
-    root: {
-        maxWidth: 340,
-    },
-    media: {
-        height: 260,
-    },
-});
-
+import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, Typography } from '@material-ui/core';
+import { useStyles } from './style';
 
 const CardItem = ({ values }) => {
     const classes = useStyles();
@@ -34,14 +24,14 @@ const CardItem = ({ values }) => {
                         title={values?.name}
                         onClick={handleClick}
                     />
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2">
+                    <CardContent className={classes.cardBg}>
+                        <Typography gutterBottom variant="h5" component="h2" className={classes.cardTitle}>
                             {values?.name}
                         </Typography>
                     </CardContent>
                 </CardActionArea>
-                <CardActions>
-                    <Button size="small" color="secondary" className="btn-red" onClick={handleClick}>
+                <CardActions className={classes.cardBtnBg}>
+                    <Button size="small" color="secondary" className={classes.cardBtn} onClick={handleClick}>
                         Saiba mais
                     </Button>
                 </CardActions>

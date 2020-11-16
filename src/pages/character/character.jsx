@@ -40,14 +40,19 @@ function Character() {
         <div className={classes.root}>
           <Paper elevation={3} className={classes.paper}>
             <Grid container>
-              <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
+              <Grid item xs={12} sm={6} md={4} lg={3} xl={3} className={classes.heroBg}>
                 <img className={classes.heroImg} src={`${character?.thumbnail?.path}.${character?.thumbnail?.extension}`}/>
               </Grid>
-              <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
-                <Grid container style={{margin:0}} spacing={3}>
-                  <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                    <Typography><b>Nome: </b>{character?.name}</Typography>
-                    <Typography>{character?.description}</Typography>
+              <Grid item xs={12} sm={6} md={8} lg={9} xl={9}>
+                <Grid container style={{margin:0}} spacing={1}>
+                  <Grid item xs={12} sm={12} md={12} lg={12} xl={12} className={classes.heroInf}>
+                    <Typography className={classes.heroName}>
+                      <b>Nome: </b>{character?.name}
+                    </Typography>
+                    <Typography className={classes.heroDsc}>
+                      <b>Descrição: </b>
+                      {character?.description ? character?.description : 'Descrição não disponível.'}
+                    </Typography>
                   </Grid>
                 </Grid>
               </Grid>
