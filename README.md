@@ -16,7 +16,7 @@ Instalando as dependências necesárias para iniciar o projeto:
   $ cd Teste-VaiBem-Marvel-API
   $ npm install
   ```
-  Você pode utilizar o Yarn também
+  Você pode utilizar o **Yarn** também:
   ```sh
   $ cd Teste-VaiBem-Marvel-API
   $yarn install
