@@ -1,6 +1,6 @@
 # Aplicação utilizando a Marvel API
 
-Essa aplicação permite a busca de diversos **personagems** da Marvel.
+Essa aplicação permite a busca de diversos **personagens** da Marvel.
 
 ## Novas Features!
 
